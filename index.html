@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A paced, beginner-friendly Cyber Kill Chain investigation CTF for GitHub Pages.">
+  <meta name="theme-color" content="#071318">
+  <title>Operation Seven Locks — Cyber Kill Chain CTF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#console">Skip to investigation</a>
+  <header class="topbar">
+    <a class="brand" href="#top"><span>7//K</span> OPERATION SEVEN LOCKS</a>
+    <div class="status"><span class="live">● FIELD LINK</span><span id="score">0 / 21 CLUES</span><span id="clock">60:00 MINIMUM</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="kicker">BEGINNER INVESTIGATION // 60–90 MINUTES</p>
+        <h1>Stop the attack.<br><em>Remember the chain.</em></h1>
+        <p class="lede">A harmless training incident is unfolding at Northstar Research. Trace one attacker through seven linked decisions, capture 21 clues, and learn where defenders can break the operation.</p>
+        <div class="actions"><a class="button primary" href="#briefing">Open case file ↓</a><button class="button ghost" id="reset" type="button">Reset case</button></div>
+        <div class="metrics"><div><b>7</b><span>PHASES</span></div><div><b>21</b><span>CLUES</span></div><div><b>60m</b><span>MINIMUM</span></div><div><b>0</b><span>INSTALLS</span></div></div>
+      </div>
+      <div class="radar" aria-label="Seven phases orbiting a defended system">
+        <div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="sweep"></div>
+        <div class="target"><small>ATTACK</small><strong>CHAIN</strong><small>07 LINKS</small></div>
+        <span class="ping p1">RECON</span><span class="ping p2">DELIVERY</span><span class="ping p3">C2</span>
+      </div>
+    </section>
+
+    <section class="section" id="briefing">
+      <div class="heading"><p class="kicker">00 // MENTAL MODEL</p><h2>Seven links. One defender needs to break only one.</h2><p>The Cyber Kill Chain is a way to describe how a targeted intrusion develops. It is a model, not a law: real attacks may skip, repeat, or reorder steps.</p></div>
+      <div class="memory-map" role="img" aria-label="Cyber Kill Chain from reconnaissance to actions on objectives">
+        <div><i>1</i><b>Recon</b><small>LEARN</small></div><span>→</span><div><i>2</i><b>Weaponize</b><small>BUILD</small></div><span>→</span><div><i>3</i><b>Deliver</b><small>SEND</small></div><span>→</span><div><i>4</i><b>Exploit</b><small>TRIGGER</small></div><span>→</span><div><i>5</i><b>Install</b><small>STAY</small></div><span>→</span><div><i>6</i><b>Command</b><small>CONTROL</small></div><span>→</span><div><i>7</i><b>Act</b><small>ACHIEVE</small></div>
+      </div>
+      <aside class="mnemonic"><b>THE MEMORY LINE</b><p><strong>Learn → Build → Send → Trigger → Stay → Control → Achieve.</strong> The verbs tell the story even when the technical details change.</p></aside>
+      <div class="concept-grid">
+        <article><span>ATTACKER VIEW</span><h3>A chain of dependencies</h3><p>Later actions usually depend on earlier success. No delivery means nothing arrives; no execution means the payload cannot run.</p></article>
+        <article><span>DEFENDER VIEW</span><h3>Seven chances to intervene</h3><p>Reduce exposed information, filter delivery, patch software, limit execution, detect persistence, block control traffic, and protect critical data.</p></article>
+        <article><span>ANALYST VIEW</span><h3>Evidence, not guesswork</h3><p>A phase describes the attacker’s purpose. Classify an event by what it accomplishes, not merely by the tool or file involved.</p></article>
+      </div>
+    </section>
+
+    <section class="section field-guide">
+      <div class="heading compact"><p class="kicker">01 // FIELD GUIDE</p><h2>Read the chain from left to right.</h2></div>
+      <div id="phaseGuide" class="phase-guide"></div>
+      <div class="defense-chart">
+        <div><b>EARLY</b><span>Cheaper interruption</span></div><div class="bar"><i></i></div><div><b>LATE</b><span>Greater potential impact</span></div>
+        <p>Earlier prevention can reduce exposure; later detection is still valuable. Layered defense matters because no single control is perfect.</p>
+      </div>
+    </section>
+
+    <section class="section rules">
+      <div class="heading compact"><p class="kicker">02 // RULES OF ENGAGEMENT</p><h2>A paced case, not a speed quiz.</h2></div>
+      <div class="rule-grid">
+        <article><b>01</b><h3>Read</h3><p>Each dossier teaches one phase before asking you to interpret evidence.</p></article>
+        <article><b>02</b><h3>Reason</h3><p>Answers are short, but clues use realistic wording rather than copying definitions.</p></article>
+        <article><b>03</b><h3>Unlock</h3><p>A new dossier becomes available as field time passes. Refreshing does not reset time.</p></article>
+        <article><b>04</b><h3>Debrief</h3><p>Correct answers explain why. Completion requires 21 clues and 60 active minutes.</p></article>
+      </div>
+      <p class="pace-note">You may pause and return on this device. The clock counts time only while this page is open and visible.</p>
+    </section>
+
+    <section class="section" id="console">
+      <div class="heading"><p class="kicker">03 // INVESTIGATION CONSOLE</p><h2>Northstar incident timeline</h2><p>Seven dossiers unlock across the hour. Solve three clues in each. Hints teach rather than penalize.</p></div>
+      <nav class="tabs" id="tabs" aria-label="Kill Chain dossiers"></nav>
+      <div class="case-layout"><aside class="timeline" id="timeline"></aside><div id="dossier"></div></div>
+    </section>
+
+    <section class="section finish" id="finish" aria-live="polite">
+      <p class="kicker">OPERATION STATUS</p><h2 id="finishTitle">The chain is still forming.</h2>
+      <div class="progress"><i id="progressBar"></i></div><p id="finishText">Open dossier one and start connecting the evidence.</p>
+      <button class="button primary" id="certificate" disabled type="button">Open debrief certificate</button>
+    </section>
+  </main>
+
+  <footer><span>OPERATION SEVEN LOCKS // EDUCATION EDITION</span><span>Local progress only · No data leaves this device</span></footer>
+
+  <dialog id="certificateDialog"><form method="dialog" class="certificate-card"><button class="close" value="close" aria-label="Close">×</button><p class="kicker">CHAIN INTERRUPTED</p><h2>Analyst Debrief</h2><p>This certifies that</p><label><span class="sr-only">Analyst name</span><input id="analystName" placeholder="type your name" autocomplete="name"></label><p>traced all seven Cyber Kill Chain phases and identified where defenders can intervene.</p><div class="seal">7//7<small>21 CLUES</small></div><p id="date"></p><button class="button primary" id="print" type="button">Print / Save PDF</button></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
